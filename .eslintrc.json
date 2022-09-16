@@ -5,12 +5,12 @@
     "jest": true
   },
   "extends": [
-    "plugin:react/recommended", 
+    "plugin:react/recommended",
     "standard-with-typescript",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript"
-],
+  ],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -18,5 +18,24 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["react", "@typescript-eslint", "prettier", "import"],
-  "rules": {}
+  "rules": {
+    "semi": "off",
+    "@typescript-eslint/semi": ["warnings"],
+    "no-shadow": "off",
+    "no-underscore-dangle": "off",
+    "prettier/prettier": "error",
+    "import/extensions": "off",
+    "import/no-unresolved": "error",
+    "no-console": "off",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "never",
+        "groups": [
+          ["builtin", "external"],
+          ["internal", "parent", "sibling", "index"]
+        ]
+      }
+    ]
+  }
 }
